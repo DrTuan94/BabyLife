@@ -5,40 +5,193 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BabyLife Privacy Policy</title>
     <style>
+        :root {
+            --primary: #e67e22;
+            --primary-light: #f39c12;
+            --secondary: #1abc9c;
+            --text-dark: #2c3e50;
+            --text-light: #7f8c8d;
+            --bg-color: #fdfbf9;
+            --card-bg: #ffffff;
+            --shadow: 0 10px 30px rgba(230, 126, 34, 0.08);
+        }
+
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-            max-width: 800px;
-            margin: 40px auto;
-            padding: 20px;
-            line-height: 1.6;
-            color: #333;
-            background: #fff;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-dark);
+            line-height: 1.7;
+            margin: 0;
+            padding: 0;
         }
-        h1 { color: #e67e22; font-size: 2.2rem; }
-        h2 { color: #d35400; font-size: 1.5rem; margin-top: 2rem; }
-        .lang-selector {
-            margin-bottom: 2rem;
+
+        /* Hero Header */
+        .header-section {
+            background: linear-gradient(135deg, #e67e22 0%, #f39c12 100%);
+            color: white;
             text-align: center;
+            padding: 60px 20px 80px;
+            border-radius: 0 0 50px 50px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
         }
+
+        h1 {
+            margin: 0;
+            font-size: 2.8rem;
+            font-weight: 800;
+            letter-spacing: -1px;
+        }
+
+        .last-updated {
+            font-size: 0.9rem;
+            opacity: 0.9;
+            margin-top: 10px;
+            font-weight: 500;
+        }
+
+        /* Language Selector */
+        .lang-selector {
+            max-width: 800px;
+            margin: -35px auto 30px;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+            padding: 0 20px;
+        }
+
         .lang-btn {
-            padding: 8px 16px;
-            margin: 0 6px;
-            border: 1px solid #ccc;
-            border-radius: 6px;
-            background: #f8f8f8;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 50px;
+            background: var(--card-bg);
+            color: var(--text-dark);
             cursor: pointer;
-            font-size: 1rem;
+            font-weight: 600;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
         }
-        .lang-btn.active { background: #e67e22; color: white; border-color: #e67e22; }
-        .lang-content { display: none; }
-        .lang-content.active { display: block; }
-        .footer { margin-top: 3rem; text-align: center; font-style: italic; color: #777; }
+
+        .lang-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+        }
+
+        .lang-btn.active {
+            background: var(--secondary);
+            color: white;
+            border-color: rgba(255,255,255,0.2);
+        }
+
+        /* Content Container */
+        .container {
+            max-width: 850px;
+            margin: 0 auto 60px;
+            padding: 0 20px;
+        }
+
+        .lang-content {
+            display: none;
+            animation: slideUp 0.4s ease-out;
+        }
+
+        .lang-content.active {
+            display: block;
+        }
+
+        /* Section Cards */
+        .content-card {
+            background: var(--card-bg);
+            padding: 40px;
+            border-radius: 30px;
+            box-shadow: var(--shadow);
+            margin-bottom: 25px;
+            border: 1px solid rgba(230, 126, 34, 0.05);
+        }
+
+        h2 {
+            color: var(--primary);
+            font-size: 1.6rem;
+            margin-top: 0;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+        }
+
+        h2::before {
+            content: "";
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            background-color: var(--secondary);
+            border-radius: 50%;
+            margin-right: 15px;
+        }
+
+        ul {
+            padding-left: 1.2rem;
+            list-style-type: none;
+        }
+
+        li {
+            position: relative;
+            margin-bottom: 12px;
+            padding-left: 25px;
+        }
+
+        li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--secondary);
+            font-weight: bold;
+        }
+
+        strong {
+            color: var(--primary);
+        }
+
+        .contact-email {
+            background: #fff5eb;
+            padding: 15px 25px;
+            border-radius: 15px;
+            display: inline-block;
+            color: var(--primary);
+            font-weight: 700;
+            border: 1px dashed var(--primary);
+            margin-top: 10px;
+        }
+
+        .footer {
+            margin-top: 50px;
+            padding: 40px;
+            text-align: center;
+            background: linear-gradient(to right, #fff5eb, #fdfbf9);
+            border-radius: 30px;
+            color: var(--text-light);
+            font-style: italic;
+            border: 1px solid rgba(230, 126, 34, 0.1);
+        }
+
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @media (max-width: 600px) {
+            h1 { font-size: 2rem; }
+            .content-card { padding: 25px; }
+            .lang-btn { padding: 10px 18px; font-size: 0.9rem; }
+        }
     </style>
 </head>
 <body>
 
-    <h1>BabyLife Privacy Policy</h1>
-    <p class="last-updated">Last updated: January 31, 2026</p>
+    <div class="header-section">
+        <h1>BabyLife</h1>
+        <p class="last-updated">Last updated: January 31, 2026</p>
+    </div>
 
     <div class="lang-selector">
         <button class="lang-btn active" data-lang="en">English</button>
@@ -47,159 +200,220 @@
         <button class="lang-btn" data-lang="zh">中文</button>
     </div>
 
-    <!-- English (default) -->
-    <div id="en" class="lang-content active">
-        <p>At BabyLife, your family's privacy is our highest priority. This Privacy Policy explains what information we collect (and what we don't) when you use the BabyLife app, and how we handle it.</p>
+    <div class="container">
+        <div id="en" class="lang-content active">
+            <div class="content-card">
+                <p>At BabyLife, your family's privacy is our highest priority.<br>
+                This Privacy Policy explains — in plain language — what information we collect (and what we don't) when you use the BabyLife app, and how we handle it.</p>
 
-        <h2>1. Information We Collect</h2>
-        <p>BabyLife works completely offline and keeps all data under your control.</p>
-        <p>We only store information <strong>you enter</strong> about your baby, such as daily activities (meals, play, sleep, potty), notes, ratings, durations, and dates/times.</p>
-        <p>This data never leaves your device — it is never sent to any server or shared.</p>
+                <h2>1. Information We Collect</h2>
+                <p>BabyLife is designed to work completely offline and keep every piece of data under your full control.</p>
+                <p>We collect and store <strong>only</strong> the information <strong>you</strong> choose to enter about your baby, such as:</p>
+                <ul>
+                    <li>Daily activities (meals, play time, sleep, potty, etc.)</li>
+                    <li>Notes, enjoyment ratings, meal types, durations, and any custom text</li>
+                    <li>Dates and times of your entries</li>
+                </ul>
+                <p>All of this data stays <strong>exclusively on your device</strong> — it is never sent to any server, never uploaded, and never shared with anyone.</p>
 
-        <h2>2. No Personal Identifiers</h2>
-        <p>We do not collect your name, email, phone, location, or any other personal information.</p>
-        <p>No accounts, no login, no tracking.</p>
+                <h2>2. No Personal Identifiers</h2>
+                <p>We do <strong>not</strong> collect:</p>
+                <ul>
+                    <li>Your name, email address, or phone number</li>
+                    <li>Your location</li>
+                    <li>Photos (unless you add them manually in future versions)</li>
+                    <li>Any other personally identifiable information</li>
+                </ul>
+                <p>There is <strong>no account creation</strong>, <strong>no login</strong>, and <strong>no tracking</strong> of any kind.</p>
 
-        <h2>3. Technical Data</h2>
-        <p>We may receive anonymous crash reports or basic usage stats via Apple's App Analytics — never including your baby data or personal info.</p>
+                <h2>3. Technical & Analytics Data</h2>
+                <p>We may receive very limited, fully anonymous technical information through Apple's standard App Analytics, such as:</p>
+                <ul>
+                    <li>Crash reports</li>
+                    <li>Basic usage statistics (e.g., which features are used most)</li>
+                </ul>
+                <p>This data <strong>never</strong> includes any personal details, baby information, or content from your logs.</p>
 
-        <h2>4. How We Use Data</h2>
-        <p>Only to show logs, charts, and summaries inside the app. We do not sell, share, or use data for ads or other purposes.</p>
+                <h2>4. How We Use Your Information</h2>
+                <p>We use your data <strong>only</strong> to:</p>
+                <ul>
+                    <li>Show your baby's daily logs, charts, and summaries inside the app</li>
+                    <li>Allow you to edit, review, or delete entries</li>
+                    <li>Create simple visualizations (averages, progress over time)</li>
+                </ul>
+                <p>That's it. We do <strong>not</strong> sell data. We do <strong>not</strong> share data. We do <strong>not</strong> use it for advertising or any other purpose.</p>
 
-        <h2>5. Storage & Security</h2>
-        <p>Data is stored locally with Apple's encryption. Deleting the app removes everything permanently.</p>
+                <h2>5. Data Storage & Security</h2>
+                <ul>
+                    <li>All your data is stored locally on your iOS device only.</li>
+                    <li>We rely on Apple's strong built-in encryption and data protection features.</li>
+                    <li>If you delete the app or erase its data, all your baby's logs are permanently removed from the device.</li>
+                </ul>
 
-        <h2>6. Your Rights</h2>
-        <p>Edit/delete entries anytime. No external account exists.</p>
+                <h2>6. Your Rights & Control</h2>
+                <p>You have complete control at all times:</p>
+                <ul>
+                    <li>Edit or delete any entry whenever you want</li>
+                    <li>Remove all data instantly by deleting the app</li>
+                    <li>No external account = nothing to delete elsewhere</li>
+                </ul>
 
-        <h2>7. Children</h2>
-        <p>Not directed at children under 13 — for parents/guardians only.</p>
+                <h2>7. Children Under 13</h2>
+                <p>BabyLife is <strong>not</strong> directed to children under 13. The app is designed exclusively for parents and guardians.</p>
 
-        <h2>8. Changes</h2>
-        <p>We may update this policy and will notify you in-app if significant.</p>
+                <h2>8. Changes to This Policy</h2>
+                <p>We may update this policy from time to time. If any significant change occurs, we will show a notice inside the app.</p>
 
-        <h2>9. Contact</h2>
-        <p>Questions? Email:covieworganization.babylifeapp@gmail.com</p>
+                <h2>9. Contact Us</h2>
+                <p>If you have any questions about privacy or your data, please feel free to reach out:</p>
+                <div class="contact-email">covieworganization.babylifeapp@gmail.com</div>
+            </div>
 
-        <div class="footer">
-            Thank you for using BabyLife.<br>We keep your family's moments safe and private.
+            <div class="footer">
+                Thank you for choosing BabyLife.<br>
+                We are deeply committed to keeping your family's most precious moments safe and completely private.
+            </div>
         </div>
-    </div>
 
-    <!-- Japanese -->
-    <div id="ja" class="lang-content">
-        <p>BabyLifeでは、ご家族のプライバシーを最優先事項としています。本プライバシーポリシーは、BabyLifeアプリ使用時に収集する情報（および収集しない情報）とその取り扱いについて説明します。</p>
+        <div id="ja" class="lang-content">
+            <div class="content-card">
+                <p>BabyLifeでは、ご家族のプライバシーを最優先事項としています。<br>
+                本プライバシーポリシーは、平易な言葉で、BabyLifeアプリを使用する際に収集する情報（および収集しない情報）とその取り扱いについて説明します。</p>
 
-        <h2>1. 収集する情報</h2>
-        <p>BabyLifeは完全にオフラインで動作し、すべてのデータをユーザーの管理下に置きます。</p>
-        <p>ユーザーが入力した赤ちゃんに関する情報（食事・遊び・睡眠・おむつなどの日常活動、メモ、評価、時間など）のみをデバイス上に保存します。</p>
-        <p>このデータはデバイスから決して送信・共有されません。</p>
+                <h2>1. 収集する情報</h2>
+                <p>BabyLifeは完全にオフラインで動作し、すべてのデータをユーザーの完全な管理下に置くよう設計されています。</p>
+                <p>収集・保存するのは、ユーザーが赤ちゃんについて入力した情報のみです。例えば：</p>
+                <ul>
+                    <li>日常の活動（食事、遊び時間、睡眠、おむつなど）</li>
+                    <li>メモ、楽しさの評価、食事の種類、量、その他のカスタムテキスト</li>
+                    <li>入力の日時</li>
+                </ul>
+                <p>これらのデータはすべて<strong>デバイス内でのみ保持</strong>され、サーバーに送信されることはなく、アップロードも共有もされません。</p>
 
-        <h2>2. 個人識別情報は収集しません</h2>
-        <p>氏名、メールアドレス、電話番号、位置情報、その他の個人情報は一切収集しません。</p>
-        <p>アカウント作成・ログイン・トラッキングはありません。</p>
+                <h2>2. 個人識別情報は収集しません</h2>
+                <p>以下の情報は<strong>収集しません</strong>：</p>
+                <ul>
+                    <li>氏名、メールアドレス、電話番号</li>
+                    <li>位置情報</li>
+                    <li>写真（将来のバージョンで手動追加する場合を除く）</li>
+                    <li>その他の個人を特定できる情報</li>
+                </ul>
+                <p>アカウント作成、ログイン、トラッキングは一切ありません。</p>
 
-        <h2>3. 技術データ</h2>
-        <p>AppleのApp Analyticsを通じた匿名クラッシュレポートや基本使用統計を受け取る場合がありますが、個人情報や赤ちゃんのデータは含まれません。</p>
+                <h2>3. 技術・分析データ</h2>
+                <p>Appleの標準App Analyticsを通じて、非常に限定的で完全に匿名化された技術情報を受け取る場合があります。</p>
+                <ul>
+                    <li>クラッシュレポート</li>
+                    <li>基本的な使用統計</li>
+                </ul>
+                <p>このデータには個人情報、赤ちゃんの情報、ログの内容は<strong>一切含まれません</strong>。</p>
 
-        <h2>4. データの利用目的</h2>
-        <p>アプリ内でのログ表示、チャート、サマリー表示のみに使用します。販売・共有・広告目的での利用は一切ありません。</p>
+                <h2>4. 情報の利用目的</h2>
+                <p>データは<strong>以下の目的でのみ</strong>使用します：</p>
+                <ul>
+                    <li>アプリ内で赤ちゃんの日常ログ、チャート、サマリーを表示</li>
+                    <li>エントリーの編集、確認、削除を可能にする</li>
+                    <li>簡単な可視化を作成</li>
+                </ul>
+                <p>それだけです。データを販売したり共有したり、広告目的で使用したりすることはありません。</p>
 
-        <h2>5. 保存とセキュリティ</h2>
-        <p>データはAppleの暗号化によりデバイス内に保存。アプリ削除で完全に消去されます。</p>
+                <h2>5. データの保存とセキュリティ</h2>
+                <ul>
+                    <li>すべてのデータはiOSデバイス上にのみローカル保存されます。</li>
+                    <li>Appleの強力な暗号化とデータ保護機能に依存しています。</li>
+                    <li>アプリを削除すると、ログはデバイスから完全に削除されます。</li>
+                </ul>
 
-        <h2>6. ユーザーの権利</h2>
-        <p>いつでもエントリーの編集・削除が可能。外部アカウントは存在しません。</p>
+                <h2>6. ユーザーの権利とコントロール</h2>
+                <ul>
+                    <li>いつでもエントリーを編集または削除</li>
+                    <li>アプリを削除するだけで即座に全データを削除</li>
+                </ul>
 
-        <h2>7. 13歳未満の子ども</h2>
-        <p>13歳未満の子ども向けではなく、保護者専用です。</p>
+                <h2>7. 13歳未満の子ども</h2>
+                <p>BabyLifeは保護者専用に設計されています。</p>
 
-        <h2>8. ポリシーの変更</h2>
-        <p>ポリシーを更新する場合があり、重要な変更時はアプリ内で通知します。</p>
+                <h2>8. 本ポリシーの変更</h2>
+                <p>重要な変更が発生した場合、アプリ内で通知します。</p>
 
-        <h2>9. お問い合わせ</h2>
-        <p>ご質問はこちらまで：covieworganization.babylifeapp@gmail.com</p>
-
-        <div class="footer">
-            BabyLifeをご利用いただきありがとうございます。<br>大切な家族の瞬間を安全かつ完全にプライベートに保ちます。
+                <h2>9. お問い合わせ</h2>
+                <div class="contact-email">covieworganization.babylifeapp@gmail.com</div>
+            </div>
+            <div class="footer">BabyLifeをお選びいただきありがとうございます。</div>
         </div>
-    </div>
 
-    <!-- Vietnamese -->
-    <div id="vi" class="lang-content">
-        <p>Tại BabyLife, quyền riêng tư của gia đình bạn là ưu tiên hàng đầu. Chính sách Quyền riêng tư này giải thích thông tin chúng tôi thu thập (và không thu thập) khi bạn sử dụng ứng dụng BabyLife.</p>
+        <div id="vi" class="lang-content">
+            <div class="content-card">
+                <p>Tại BabyLife, quyền riêng tư của gia đình bạn là ưu tiên hàng đầu.<br>
+                Chính sách Quyền riêng tư này giải thích thông tin chúng tôi thu thập khi bạn sử dụng ứng dụng BabyLife.</p>
 
-        <h2>1. Thông tin chúng tôi thu thập</h2>
-        <p>BabyLife hoạt động hoàn toàn ngoại tuyến và giữ toàn bộ dữ liệu dưới sự kiểm soát của bạn.</p>
-        <p>Chúng tôi chỉ lưu trữ thông tin bạn nhập về bé: hoạt động hàng ngày (ăn uống, chơi, ngủ, thay tã...), ghi chú, đánh giá, thời gian...</p>
-        <p>Dữ liệu không bao giờ rời khỏi thiết bị — không gửi lên máy chủ, không chia sẻ.</p>
+                <h2>1. Thông tin chúng tôi thu thập</h2>
+                <p>BabyLife được thiết kế để hoạt động hoàn toàn ngoại tuyến.</p>
+                <ul>
+                    <li>Các hoạt động hàng ngày (bữa ăn, chơi, ngủ, tã, v.v.)</li>
+                    <li>Ghi chú, đánh giá và văn bản tùy chỉnh</li>
+                    <li>Ngày và giờ của các mục nhập</li>
+                </ul>
+                <p>Tất cả dữ liệu này được giữ <strong>chỉ trên thiết bị của bạn</strong>.</p>
 
-        <h2>2. Không thu thập thông tin nhận dạng cá nhân</h2>
-        <p>Chúng tôi không thu thập tên, email, số điện thoại, vị trí hoặc bất kỳ thông tin cá nhân nào khác.</p>
-        <p>Không tài khoản, không đăng nhập, không theo dõi.</p>
+                <h2>2. Không thu thập thông tin cá nhân</h2>
+                <ul>
+                    <li>Không thu thập tên, email, số điện thoại hoặc vị trí.</li>
+                    <li>Không có tạo tài khoản, không đăng nhập.</li>
+                </ul>
 
-        <h2>3. Dữ liệu kỹ thuật</h2>
-        <p>Có thể nhận báo cáo sự cố ẩn danh hoặc thống kê sử dụng cơ bản từ Apple App Analytics — không bao gồm dữ liệu cá nhân hay thông tin về bé.</p>
+                <h2>3. Dữ liệu kỹ thuật</h2>
+                <p>Chúng tôi nhận báo cáo sự cố ẩn danh qua Apple App Analytics để cải thiện ứng dụng.</p>
 
-        <h2>4. Cách sử dụng dữ liệu</h2>
-        <p>Chỉ dùng để hiển thị nhật ký, biểu đồ và tóm tắt trong ứng dụng. Không bán, không chia sẻ, không dùng cho quảng cáo.</p>
+                <h2>4. Cách chúng tôi sử dụng thông tin</h2>
+                <ul>
+                    <li>Hiển thị nhật ký và biểu đồ trong ứng dụng.</li>
+                    <li>Không bán hoặc chia sẻ dữ liệu cho quảng cáo.</li>
+                </ul>
 
-        <h2>5. Lưu trữ & Bảo mật</h2>
-        <p>Dữ liệu lưu cục bộ với mã hóa của Apple. Xóa ứng dụng sẽ xóa hoàn toàn dữ liệu.</p>
+                <h2>5. Lưu trữ & Bảo mật</h2>
+                <p>Dữ liệu được bảo vệ bởi tính năng mã hóa của Apple trên thiết bị của bạn.</p>
 
-        <h2>6. Quyền của bạn</h2>
-        <p>Chỉnh sửa/xóa mục bất kỳ lúc nào. Không có tài khoản bên ngoài.</p>
+                <h2>6. Quyền của bạn</h2>
+                <p>Bạn có thể xóa hoặc sửa dữ liệu bất cứ lúc nào bằng cách xóa mục nhập hoặc xóa ứng dụng.</p>
 
-        <h2>7. Trẻ em dưới 13 tuổi</h2>
-        <p>Ứng dụng không hướng đến trẻ dưới 13 tuổi — chỉ dành cho cha mẹ/người giám hộ.</p>
-
-        <h2>8. Thay đổi chính sách</h2>
-        <p>Chúng tôi có thể cập nhật chính sách và sẽ thông báo trong ứng dụng nếu có thay đổi quan trọng.</p>
-
-        <h2>9. Liên hệ</h2>
-        <p>Câu hỏi? Email: covieworganization.babylifeapp@gmail.com</p>
-
-        <div class="footer">
-            Cảm ơn bạn đã chọn BabyLife.<br>Chúng tôi cam kết giữ những khoảnh khắc quý giá của gia đình bạn an toàn và hoàn toàn riêng tư.
+                <h2>9. Liên hệ</h2>
+                <div class="contact-email">covieworganization.babylifeapp@gmail.com</div>
+            </div>
         </div>
-    </div>
 
-    <!-- Chinese (Simplified) -->
-    <div id="zh" class="lang-content">
-        <p>在 BabyLife，我们将您家庭的隐私放在首位。本隐私政策说明在使用 BabyLife 应用时我们收集（以及不收集）的个人信息及其处理方式。</p>
+        <div id="zh" class="lang-content">
+            <div class="content-card">
+                <p>在 BabyLife，我们将您家庭的隐私放在首位。<br>
+                本隐私政策解释在使用 BabyLife 应用时我们收集的信息。</p>
 
-        <h2>1. 我们收集的信息</h2>
-        <p>BabyLife 完全离线运行，所有数据由您完全控制。</p>
-        <p>我们仅存储您输入的关于宝宝的信息，例如日常活动（喂食、玩耍、睡眠、换尿布等）、备注、评分、时长和日期时间。</p>
-        <p>这些数据永不离开您的设备——从不上传到服务器，从不与任何人共享。</p>
+                <h2>1. 我们收集的信息</h2>
+                <p>BabyLife 设计为完全离线运行。</p>
+                <ul>
+                    <li>日常活动（喂食、玩耍、睡眠等）</li>
+                    <li>备注、评分及自定义文本</li>
+                    <li>条目日期和时间</li>
+                </ul>
+                <p>所有数据<strong>仅保留在您的设备上</strong>。</p>
 
-        <h2>2. 不收集个人身份信息</h2>
-        <p>我们不收集您的姓名、电子邮件、电话号码、位置或其他任何个人信息。</p>
-        <p>无账号、无登录、无追踪。</p>
+                <h2>2. 不收集个人身份信息</h2>
+                <p>我们不收集姓名、电子邮件、电话或位置。没有账户创建，没有跟踪。</p>
 
-        <h2>3. 技术数据</h2>
-        <p>我们可能通过 Apple 的 App Analytics 接收匿名崩溃报告或基本使用统计——绝不包含您的个人信息或宝宝数据。</p>
+                <h2>3. 技术与分析数据</h2>
+                <p>我们通过 Apple 接收匿名崩溃报告以优化应用。</p>
 
-        <h2>4. 数据使用方式</h2>
-        <p>仅用于在应用内显示日志、图表和摘要。不出售、不分享、不用于广告或其他目的。</p>
+                <h2>4. 我们如何使用信息</h2>
+                <ul>
+                    <li>在应用内显示日志和图表。</li>
+                    <li>不销售数据，不用于广告。</li>
+                </ul>
 
-        <h2>5. 存储与安全</h2>
-        <p>数据仅存储在您的 iOS 设备本地，使用 Apple 的加密保护。删除应用将永久清除所有数据。</p>
+                <h2>5. 数据存储与安全</h2>
+                <p>数据存储在本地并受 Apple 加密技术保护。</p>
 
-        <h2>6. 您的权利</h2>
-        <p>随时编辑或删除条目。没有外部账号。</p>
-
-        <h2>7. 13岁以下儿童</h2>
-        <p>应用并非面向13岁以下儿童——仅供父母/监护人使用。</p>
-
-        <h2>8. 政策变更</h2>
-        <p>我们可能会不时更新本政策，如有重大变更将在应用内通知您。</p>
-
-        <h2>9. 联系我们</h2>
-        <p>如有隐私或数据相关问题，请联系：covieworganization.babylifeapp@gmail.com</p>
-
-        <div class="footer">
-            感谢您选择 BabyLife。<br>我们致力于让您家庭的宝贵时刻保持安全与完全私密。
+                <h2>9. 联系我们</h2>
+                <div class="contact-email">covieworganization.babylifeapp@gmail.com</div>
+            </div>
         </div>
     </div>
 
@@ -207,10 +421,11 @@
         document.querySelectorAll('.lang-btn').forEach(btn => {
             btn.addEventListener('click', () => {
                 document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
-                btn.classList.add('active');
-
                 document.querySelectorAll('.lang-content').forEach(c => c.classList.remove('active'));
+                
+                btn.classList.add('active');
                 document.getElementById(btn.dataset.lang).classList.add('active');
+                window.scrollTo({ top: 0, behavior: 'smooth' });
             });
         });
     </script>
