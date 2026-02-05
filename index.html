@@ -3,12 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BabyLife Privacy Policy</title>
+    <title>Baby&Life - Privacy & Terms</title>
     <style>
         :root {
             --primary: #e67e22;
             --primary-light: #f39c12;
             --secondary: #1abc9c;
+            --accent: #d81b60; 
             --text-dark: #2c3e50;
             --text-light: #7f8c8d;
             --bg-color: #fdfbf9;
@@ -25,7 +26,6 @@
             padding: 0;
         }
 
-        /* Hero Header */
         .header-section {
             background: linear-gradient(135deg, #e67e22 0%, #f39c12 100%);
             color: white;
@@ -35,21 +35,9 @@
             box-shadow: 0 4px 20px rgba(0,0,0,0.1);
         }
 
-        h1 {
-            margin: 0;
-            font-size: 2.8rem;
-            font-weight: 800;
-            letter-spacing: -1px;
-        }
+        h1 { margin: 0; font-size: 2.8rem; font-weight: 800; letter-spacing: -1px; }
+        .last-updated { font-size: 0.9rem; opacity: 0.9; margin-top: 10px; font-weight: 500; }
 
-        .last-updated {
-            font-size: 0.9rem;
-            opacity: 0.9;
-            margin-top: 10px;
-            font-weight: 500;
-        }
-
-        /* Language Selector */
         .lang-selector {
             max-width: 800px;
             margin: -35px auto 30px;
@@ -73,34 +61,12 @@
             border: 2px solid transparent;
         }
 
-        .lang-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(0,0,0,0.1);
-        }
+        .lang-btn.active { background: var(--secondary); color: white; }
 
-        .lang-btn.active {
-            background: var(--secondary);
-            color: white;
-            border-color: rgba(255,255,255,0.2);
-        }
+        .container { max-width: 850px; margin: 0 auto 60px; padding: 0 20px; }
+        .lang-content { display: none; animation: slideUp 0.4s ease-out; }
+        .lang-content.active { display: block; }
 
-        /* Content Container */
-        .container {
-            max-width: 850px;
-            margin: 0 auto 60px;
-            padding: 0 20px;
-        }
-
-        .lang-content {
-            display: none;
-            animation: slideUp 0.4s ease-out;
-        }
-
-        .lang-content.active {
-            display: block;
-        }
-
-        /* Section Cards */
         .content-card {
             background: var(--card-bg);
             padding: 40px;
@@ -110,87 +76,27 @@
             border: 1px solid rgba(230, 126, 34, 0.05);
         }
 
-        h2 {
-            color: var(--primary);
-            font-size: 1.6rem;
-            margin-top: 0;
-            margin-bottom: 1.5rem;
-            display: flex;
-            align-items: center;
-        }
+        h2 { color: var(--primary); font-size: 1.6rem; margin-top: 30px; margin-bottom: 1.5rem; display: flex; align-items: center; }
+        h2::before { content: ""; display: inline-block; width: 12px; height: 12px; background-color: var(--secondary); border-radius: 50%; margin-right: 15px; }
+        
+        .eula-header { color: var(--accent) !important; font-size: 1.8rem; margin-top: 50px; border-top: 2px solid #f0f0f0; padding-top: 30px; }
+        .eula-header::before { background-color: var(--accent) !important; }
 
-        h2::before {
-            content: "";
-            display: inline-block;
-            width: 12px;
-            height: 12px;
-            background-color: var(--secondary);
-            border-radius: 50%;
-            margin-right: 15px;
-        }
+        ul { padding-left: 1.2rem; list-style-type: none; }
+        li { position: relative; margin-bottom: 12px; padding-left: 25px; }
+        li::before { content: "✓"; position: absolute; left: 0; color: var(--secondary); font-weight: bold; }
 
-        ul {
-            padding-left: 1.2rem;
-            list-style-type: none;
-        }
+        .contact-email { background: #fff5eb; padding: 15px 25px; border-radius: 15px; display: inline-block; color: var(--primary); font-weight: 700; border: 1px dashed var(--primary); margin-top: 10px; }
+        .footer-note { font-size: 0.85rem; color: var(--text-light); font-style: italic; margin-top: 25px; }
 
-        li {
-            position: relative;
-            margin-bottom: 12px;
-            padding-left: 25px;
-        }
-
-        li::before {
-            content: "✓";
-            position: absolute;
-            left: 0;
-            color: var(--secondary);
-            font-weight: bold;
-        }
-
-        strong {
-            color: var(--primary);
-        }
-
-        .contact-email {
-            background: #fff5eb;
-            padding: 15px 25px;
-            border-radius: 15px;
-            display: inline-block;
-            color: var(--primary);
-            font-weight: 700;
-            border: 1px dashed var(--primary);
-            margin-top: 10px;
-        }
-
-        .footer {
-            margin-top: 50px;
-            padding: 40px;
-            text-align: center;
-            background: linear-gradient(to right, #fff5eb, #fdfbf9);
-            border-radius: 30px;
-            color: var(--text-light);
-            font-style: italic;
-            border: 1px solid rgba(230, 126, 34, 0.1);
-        }
-
-        @keyframes slideUp {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        @media (max-width: 600px) {
-            h1 { font-size: 2rem; }
-            .content-card { padding: 25px; }
-            .lang-btn { padding: 10px 18px; font-size: 0.9rem; }
-        }
+        @keyframes slideUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
     </style>
 </head>
 <body>
 
     <div class="header-section">
-        <h1>BabyLife</h1>
-        <p class="last-updated">Last updated: January 31, 2026</p>
+        <h1>Baby&Life</h1>
+        <p class="last-updated">Last updated: February 6, 2026</p>
     </div>
 
     <div class="lang-selector">
@@ -203,11 +109,11 @@
     <div class="container">
         <div id="en" class="lang-content active">
             <div class="content-card">
-                <p>At BabyLife, your family's privacy is our highest priority.<br>
-                This Privacy Policy explains — in plain language — what information we collect (and what we don't) when you use the BabyLife app, and how we handle it.</p>
+                <p>At Baby&Life, your family's privacy is our highest priority.<br>
+                This Privacy Policy explains — in plain language — what information we collect (and what we don't) when you use the Baby&Life app, and how we handle it.</p>
 
                 <h2>1. Information We Collect</h2>
-                <p>BabyLife is designed to work completely offline and keep every piece of data under your full control.</p>
+                <p>Baby&Life is designed to work completely offline and keep every piece of data under your full control.</p>
                 <p>We collect and store <strong>only</strong> the information <strong>you</strong> choose to enter about your baby, such as:</p>
                 <ul>
                     <li>Daily activities (meals, play time, sleep, potty, etc.)</li>
@@ -259,7 +165,7 @@
                 </ul>
 
                 <h2>7. Children Under 13</h2>
-                <p>BabyLife is <strong>not</strong> directed to children under 13. The app is designed exclusively for parents and guardians.</p>
+                <p>Baby&Life is <strong>not</strong> directed to children under 13. The app is designed exclusively for parents and guardians.</p>
 
                 <h2>8. Changes to This Policy</h2>
                 <p>We may update this policy from time to time. If any significant change occurs, we will show a notice inside the app.</p>
@@ -267,22 +173,33 @@
                 <h2>9. Contact Us</h2>
                 <p>If you have any questions about privacy or your data, please feel free to reach out:</p>
                 <div class="contact-email">covieworganization.babylifeapp@gmail.com</div>
-            </div>
 
-            <div class="footer">
-                Thank you for choosing BabyLife.<br>
-                We are deeply committed to keeping your family's most precious moments safe and completely private.
+                <h2 class="eula-header">Terms of Use (End User License Agreement)</h2>
+                <p>Baby&Life is licensed to you under Apple's standard Licensed Application End User License Agreement ("EULA"), which applies to all applications obtained through the Apple App Store.</p>
+                
+                <p><strong>Important Summary:</strong></p>
+                <ul>
+                    <li><strong>License Grant:</strong> You are granted a limited, non-transferable, non-exclusive license to use Baby&Life on any Apple-branded products that you own or control, as permitted by the Usage Rules set forth in the App Store Terms of Service.</li>
+                    <li><strong>Restrictions:</strong> You may not rent, lease, lend, sell, redistribute, or sublicense the app. You may not copy (except as expressly permitted), decompile, reverse engineer, disassemble, attempt to derive the source code of, modify, or create derivative works of the app.</li>
+                    <li><strong>No Warranty:</strong> The app is provided "AS IS" and "AS AVAILABLE", without warranty of any kind. We disclaim all warranties, express or implied.</li>
+                    <li><strong>Limitation of Liability:</strong> To the maximum extent permitted by law, we shall not be liable for any indirect, incidental, special, consequential, or punitive damages.</li>
+                    <li><strong>Subscriptions:</strong> Any auto-renewable subscriptions are subject to Apple's payment and cancellation terms. You can manage and cancel subscriptions in your Apple Account Settings.</li>
+                    <li><strong>Termination:</strong> Your license terminates if you fail to comply with these terms or delete the app.</li>
+                    <li><strong>Governing Law:</strong> These terms are governed by the laws of the jurisdiction where you reside.</li>
+                </ul>
+                <p>For the complete and official Apple Standard EULA that governs your use of Baby&Life, please visit:<br>
+                <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" target="_blank">Official Apple Standard EULA</a></p>
+                <p>By installing or using Baby&Life, you agree to be bound by this EULA and our Privacy Policy.</p>
+                <div class="footer-note">Continued use of the app following any changes constitutes your acceptance of the updated terms.</div>
             </div>
         </div>
 
         <div id="ja" class="lang-content">
             <div class="content-card">
-                <p>BabyLifeでは、ご家族のプライバシーを最優先事項としています。<br>
-                本プライバシーポリシーは、平易な言葉で、BabyLifeアプリを使用する際に収集する情報（および収集しない情報）とその取り扱いについて説明します。</p>
+                <p>Baby&Lifeでは、ご家族のプライバシーを最優先事項としています。本プライバシーポリシーは、Baby&Lifeアプリを使用する際に収集する情報（および収集しない情報）とその取り扱いについて説明します。</p>
 
                 <h2>1. 収集する情報</h2>
-                <p>BabyLifeは完全にオフラインで動作し、すべてのデータをユーザーの完全な管理下に置くよう設計されています。</p>
-                <p>収集・保存するのは、ユーザーが赤ちゃんについて入力した情報のみです。例えば：</p>
+                <p>Baby&Lifeは完全にオフラインで動作し、すべてのデータをユーザーの完全な管理下に置くよう設計されています。</p>
                 <ul>
                     <li>日常の活動（食事、遊び時間、睡眠、おむつなど）</li>
                     <li>メモ、楽しさの評価、食事の種類、量、その他のカスタムテキスト</li>
@@ -291,64 +208,42 @@
                 <p>これらのデータはすべて<strong>デバイス内でのみ保持</strong>され、サーバーに送信されることはなく、アップロードも共有もされません。</p>
 
                 <h2>2. 個人識別情報は収集しません</h2>
-                <p>以下の情報は<strong>収集しません</strong>：</p>
-                <ul>
-                    <li>氏名、メールアドレス、電話番号</li>
-                    <li>位置情報</li>
-                    <li>写真（将来のバージョンで手動追加する場合を除く）</li>
-                    <li>その他の個人を特定できる情報</li>
-                </ul>
-                <p>アカウント作成、ログイン、トラッキングは一切ありません。</p>
+                <p>以下の情報は収集しません：氏名、メールアドレス、電話番号、位置情報、写真。アカウント作成、ログイン、トラッキングは一切ありません。</p>
 
                 <h2>3. 技術・分析データ</h2>
-                <p>Appleの標準App Analyticsを通じて、非常に限定的で完全に匿名化された技術情報を受け取る場合があります。</p>
-                <ul>
-                    <li>クラッシュレポート</li>
-                    <li>基本的な使用統計</li>
-                </ul>
-                <p>このデータには個人情報、赤ちゃんの情報、ログの内容は<strong>一切含まれません</strong>。</p>
+                <p>Appleの標準App Analyticsを通じて、匿名化された技術情報（クラッシュレポート、基本的な使用統計）を受け取る場合があります。このデータにログの内容は一切含まれません。</p>
 
                 <h2>4. 情報の利用目的</h2>
-                <p>データは<strong>以下の目的でのみ</strong>使用します：</p>
                 <ul>
                     <li>アプリ内で赤ちゃんの日常ログ、チャート、サマリーを表示</li>
                     <li>エントリーの編集、確認、削除を可能にする</li>
-                    <li>簡単な可視化を作成</li>
+                    <li>データの販売や共有、広告目的での使用は一切行いません。</li>
                 </ul>
-                <p>それだけです。データを販売したり共有したり、広告目的で使用したりすることはありません。</p>
 
                 <h2>5. データの保存とセキュリティ</h2>
+                <p>すべてのデータはiOSデバイス上にのみローカル保存されます。アプリを削除すると、ログはデバイスから完全に削除されます。</p>
+
+                <h2 class="eula-header">利用規約 (標準エンドユーザライセンス契約)</h2>
+                <p>Baby&Lifeは、Appleの標準「有料アプリケーションエンドユーザライセンス契約（EULA）」に基づきライセンス供与されます。</p>
                 <ul>
-                    <li>すべてのデータはiOSデバイス上にのみローカル保存されます。</li>
-                    <li>Appleの強力な暗号化とデータ保護機能に依存しています。</li>
-                    <li>アプリを削除すると、ログはデバイスから完全に削除されます。</li>
+                    <li><strong>ライセンスの付与:</strong> お客様が所有するAppleブランド製品での、限定的、譲渡不能、非独占的なライセンス。</li>
+                    <li><strong>制限事項:</strong> 本アプリの再配布、リバースエンジニアリング、改変などは禁止されています。</li>
+                    <li><strong>無保証:</strong> 本アプリは「現状有姿」で提供され、いかなる種類の保証もいたしません。</li>
+                    <li><strong>責任の制限:</strong> 法律で認められる最大限の範囲において、損害について一切の責任を負いません。</li>
+                    <li><strong>サブスクリプション:</strong> Appleの支払およびキャンセル規約に従います。</li>
+                    <li><strong>終了:</strong> 本規約に違反した場合、ライセンスは終了します。</li>
                 </ul>
-
-                <h2>6. ユーザーの権利とコントロール</h2>
-                <ul>
-                    <li>いつでもエントリーを編集または削除</li>
-                    <li>アプリを削除するだけで即座に全データを削除</li>
-                </ul>
-
-                <h2>7. 13歳未満の子ども</h2>
-                <p>BabyLifeは保護者専用に設計されています。</p>
-
-                <h2>8. 本ポリシーの変更</h2>
-                <p>重要な変更が発生した場合、アプリ内で通知します。</p>
-
-                <h2>9. お問い合わせ</h2>
-                <div class="contact-email">covieworganization.babylifeapp@gmail.com</div>
+                <p>詳細なApple標準EULA:<br><a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" target="_blank">公式 EULA を表示</a></p>
+                <div class="footer-note">アプリの継続的な使用は、更新された規約への同意とみなされます。</div>
             </div>
-            <div class="footer">BabyLifeをお選びいただきありがとうございます。</div>
         </div>
 
         <div id="vi" class="lang-content">
             <div class="content-card">
-                <p>Tại BabyLife, quyền riêng tư của gia đình bạn là ưu tiên hàng đầu.<br>
-                Chính sách Quyền riêng tư này giải thích thông tin chúng tôi thu thập khi bạn sử dụng ứng dụng BabyLife.</p>
+                <p>Tại Baby&Life, quyền riêng tư của gia đình bạn là ưu tiên hàng đầu. Chính sách này giải thích thông tin chúng tôi thu thập khi bạn sử dụng ứng dụng.</p>
 
                 <h2>1. Thông tin chúng tôi thu thập</h2>
-                <p>BabyLife được thiết kế để hoạt động hoàn toàn ngoại tuyến.</p>
+                <p>Baby&Life được thiết kế để hoạt động hoàn toàn ngoại tuyến. Chúng tôi chỉ lưu trữ thông tin bạn chọn nhập:</p>
                 <ul>
                     <li>Các hoạt động hàng ngày (bữa ăn, chơi, ngủ, tã, v.v.)</li>
                     <li>Ghi chú, đánh giá và văn bản tùy chỉnh</li>
@@ -357,62 +252,69 @@
                 <p>Tất cả dữ liệu này được giữ <strong>chỉ trên thiết bị của bạn</strong>.</p>
 
                 <h2>2. Không thu thập thông tin cá nhân</h2>
-                <ul>
-                    <li>Không thu thập tên, email, số điện thoại hoặc vị trí.</li>
-                    <li>Không có tạo tài khoản, không đăng nhập.</li>
-                </ul>
+                <p>Chúng tôi không thu thập tên, email, số điện thoại, vị trí hay hình ảnh. Không có tạo tài khoản, không đăng nhập.</p>
 
                 <h2>3. Dữ liệu kỹ thuật</h2>
-                <p>Chúng tôi nhận báo cáo sự cố ẩn danh qua Apple App Analytics để cải thiện ứng dụng.</p>
+                <p>Chúng tôi nhận báo cáo sự cố ẩn danh qua Apple Analytics để cải thiện ứng dụng. Dữ liệu này không bao gồm chi tiết cá nhân hay nội dung nhật ký.</p>
 
                 <h2>4. Cách chúng tôi sử dụng thông tin</h2>
                 <ul>
                     <li>Hiển thị nhật ký và biểu đồ trong ứng dụng.</li>
-                    <li>Không bán hoặc chia sẻ dữ liệu cho quảng cáo.</li>
+                    <li>Cho phép bạn sửa hoặc xóa dữ liệu.</li>
+                    <li>Chúng tôi không bán hoặc chia sẻ dữ liệu cho quảng cáo.</li>
                 </ul>
 
-                <h2>5. Lưu trữ & Bảo mật</h2>
-                <p>Dữ liệu được bảo vệ bởi tính năng mã hóa của Apple trên thiết bị của bạn.</p>
-
-                <h2>6. Quyền của bạn</h2>
-                <p>Bạn có thể xóa hoặc sửa dữ liệu bất cứ lúc nào bằng cách xóa mục nhập hoặc xóa ứng dụng.</p>
-
-                <h2>9. Liên hệ</h2>
-                <div class="contact-email">covieworganization.babylifeapp@gmail.com</div>
+                <h2 class="eula-header">Điều khoản sử dụng (EULA)</h2>
+                <p>Baby&Life được cấp phép cho bạn theo EULA tiêu chuẩn của Apple.</p>
+                <ul>
+                    <li><strong>Cấp phép:</strong> Quyền sử dụng không chuyển nhượng trên các sản phẩm Apple của bạn.</li>
+                    <li><strong>Hạn chế:</strong> Không được bán, phân phối lại, đảo ngược kỹ thuật hoặc sửa đổi ứng dụng.</li>
+                    <li><strong>Không bảo hành:</strong> Ứng dụng được cung cấp "NGUYÊN TRẠNG".</li>
+                    <li><strong>Giới hạn trách nhiệm:</strong> Không chịu trách nhiệm cho các thiệt hại phát sinh từ việc sử dụng.</li>
+                    <li><strong>Đăng ký:</strong> Quản lý qua Cài đặt tài khoản Apple.</li>
+                    <li><strong>Chấm dứt:</strong> Giấy phép chấm dứt nếu bạn vi phạm điều khoản hoặc xóa ứng dụng.</li>
+                </ul>
+                <p>Xem Apple EULA chính thức:<br><a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" target="_blank">Xem tại đây</a></p>
             </div>
         </div>
 
         <div id="zh" class="lang-content">
             <div class="content-card">
-                <p>在 BabyLife，我们将您家庭的隐私放在首位。<br>
-                本隐私政策解释在使用 BabyLife 应用时我们收集的信息。</p>
+                <p>在 Baby&Life，我们将您家庭的隐私放在首位。本政策说明了我们在您使用应用时收集的信息。</p>
 
                 <h2>1. 我们收集的信息</h2>
-                <p>BabyLife 设计为完全离线运行。</p>
+                <p>Baby&Life 设计为完全离线运行。我们仅存储您选择输入的信息：</p>
                 <ul>
-                    <li>日常活动（喂食、玩耍、睡眠等）</li>
-                    <li>备注、评分及自定义文本</li>
-                    <li>条目日期和时间</li>
+                    <li>日常活动（喂食、玩耍、睡眠、如厕等）</li>
+                    <li>备注、评分、用餐类型及自定义文本</li>
+                    <li>条目的日期和时间</li>
                 </ul>
                 <p>所有数据<strong>仅保留在您的设备上</strong>。</p>
 
                 <h2>2. 不收集个人身份信息</h2>
-                <p>我们不收集姓名、电子邮件、电话或位置。没有账户创建，没有跟踪。</p>
+                <p>我们不收集姓名、邮件、电话、位置。没有账户创建，没有跟踪。</p>
 
                 <h2>3. 技术与分析数据</h2>
-                <p>我们通过 Apple 接收匿名崩溃报告以优化应用。</p>
+                <p>通过 Apple 接收匿名崩溃报告。此数据不含任何个人细节或日志内容。</p>
 
                 <h2>4. 我们如何使用信息</h2>
                 <ul>
-                    <li>在应用内显示日志和图表。</li>
-                    <li>不销售数据，不用于广告。</li>
+                    <li>在应用内显示日志、图表和摘要。</li>
+                    <li>允许您编辑或删除条目。</li>
+                    <li>不销售、不分享数据。</li>
                 </ul>
 
-                <h2>5. 数据存储与安全</h2>
-                <p>数据存储在本地并受 Apple 加密技术保护。</p>
-
-                <h2>9. 联系我们</h2>
-                <div class="contact-email">covieworganization.babylifeapp@gmail.com</div>
+                <h2 class="eula-header">使用条款 (EULA)</h2>
+                <p>Baby&Life 根据 Apple 的标准 EULA 授权给您使用。</p>
+                <ul>
+                    <li><strong>许可授予:</strong> 在您拥有或控制的 Apple 产品上的有限使用权。</li>
+                    <li><strong>限制:</strong> 禁止出租、分发、反向工程或修改。</li>
+                    <li><strong>无担保:</strong> 按“原样”提供，不提供任何保证。</li>
+                    <li><strong>损害赔偿限制:</strong> 在法律允许范围内不对任何损害负责。</li>
+                    <li><strong>订阅:</strong> 受 Apple 付款和取消条款约束。</li>
+                    <li><strong>终止:</strong> 违规或删除应用将导致许可终止。</li>
+                </ul>
+                <p>查看 Apple 标准 EULA:<br><a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" target="_blank">访问链接</a></p>
             </div>
         </div>
     </div>
